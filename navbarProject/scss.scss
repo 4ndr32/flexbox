@@ -1,17 +1,18 @@
 body {
-    background-color: white;
+    background-color: rgb(221, 226, 225);
 }
 
 h1 {
     text-align: center;
     font-family: 'Times New Roman'; 
-    
+    margin-top: 20px;
+
 }
 
 h2 {
     text-align: center;
     font-family: 'Times New Roman'; 
-    
+    margin-top: 20px;
 }
 
 .navbar {
@@ -39,8 +40,8 @@ h2 {
 }
 
 .navbar li a:hover {
-    background-color: white;
-    color: black;
+    background-color: #999;
+    color: #333;
 }
 
 .navbar li {
