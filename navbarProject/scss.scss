@@ -1,0 +1,60 @@
+body {
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Times New Roman'; 
+    
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Times New Roman'; 
+    
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+
+}
+
+.navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16;
+        background-color: #444;
+        text-decoration: none;
+}
+
+.navbar ul {
+    
+    list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #444;
+}
+
+.navbar li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.navbar li {
+    float: left;
+    border-right: 1px solid white;
+    
+}
+
+.navbar li:last-child{
+    
+    border-right: none;
+}
+
+.navbar li img {
+    height: 40px;
+    width: 80px;
+}
