@@ -78,3 +78,11 @@ Finally, cheeseburgers are incapable of telling lies or hurting you. On the flip
                                     
                                     Finally, cheeseburgers are incapable of telling lies or hurting you. On the flip side, they can still Rick Roll you.
                                         </p>
+
+
+
+
+
+
+                                        &:nth-child(2n+1){
+    }
