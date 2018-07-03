@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(darkgrey, lightgrey);
+    font-family: 'Encode Sans Condensed', sans-serif;
 }
 
 h1 {
@@ -10,7 +10,351 @@ h1 {
 }
 
 h2 {
-    text-align: center;
+    text-align: center;body {
+        font-family: 'Encode Sans Condensed', sans-serif;
+    }
+    
+    h1 {
+        text-align: center;
+        font-family: 'Times New Roman'; 
+        margin-top: 20px;
+    
+    }
+    
+    h2 {
+        text-align: center;
+        font-family: 'Times New Roman'; 
+        margin-top: 20px;
+    }
+    
+    .navbar {
+        position: sticky;
+        top: 0;
+    
+    }
+    
+    .navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16;
+            background-color: #444;
+            text-decoration: none;
+    }
+    
+    .navbar ul {
+        
+        list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #444;
+    }
+    
+    .navbar li a:hover {
+        background-color: #999;
+        color: #333;
+    }
+    
+    .navbar li {
+        float: left;
+        border-right: 1px solid white;
+        
+    }
+    
+    .navbar li:last-child{
+        
+        border-right: none;
+    }
+    
+    .navbar li img {
+        height: 40px;
+        width: 80px;
+    }
+    
+    
+    @import "bourbon";
+    
+    $image1: 'keyboard.jpg';
+    $image2: 'richtech.jpg';
+    $image3: 'new_ideas.jpg';
+    *,
+    *:before,
+    *:after {
+    
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    @mixin abstylcenter($w,$h){
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -($w*0.5);
+        margin-top: -($h*0.5);
+    }
+    
+    @mixin a($width, $height: 55px){
+        width: $width;
+        height: $height;
+        line-height: $height;
+        @include abstylcenter($width,$height);
+    } 
+    
+    @mixin clip($string) {//www.gettingsmart.com/wp-content/uploads/2017/05/Future-technology.jpg
+        -webkit-clip-path: $string;
+        clip-path: $string;
+    }
+    
+    @mixin grab {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    //keyframes mixin
+    @mixin keyframe($name) {
+        @-webkit-keyframes #{$name} {
+            @content;
+        }
+    @-moz-keyframes #{$name} {
+            @content;
+        }
+    @-ms-keyframes #{$name} {
+            @content;
+        }
+    @keyframes #{$name} {
+            @content;
+        }
+    }
+    
+    body{
+        font: {
+            family: 'Martel Sans', sans-serif;
+        }
+        background-color: #000;
+    }
+    $elipsea:19px;
+    section{
+        height: 350px;
+        width: 94%;
+        box-shadow: 0px 0px 146px 21px rgba(0,0,0,0.75);
+        background : {
+            color : #000;
+            repeat: no-repeat;
+            size: cover;
+            position: center center;
+        }
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 auto 0px;
+        a{
+            text: {
+                transform: uppercase;
+                align: center;
+                decoration: none;
+            }
+            font: {
+                size: 4.875em;
+                weight: 900;
+            }
+            color: #fff;
+            &:after, &:before{
+                content: '';
+            }
+        }
+        &:nth-child(2n+1){
+        }
+        &.head{
+            background-color: #fff;
+            position: relative;
+            z-index: 10;
+            a{
+                $w: 652px;
+                $h: 78px;
+                @include a($w, $h);
+                font-weight: 200;
+                color: #BABABA;
+                @include transition(all 2s cubic-bezier(.21,1,.84,1.01) );
+                &:before, &:after{
+                    color: #000;
+                    font-weight: 900;
+                    font-size: 30px;
+                    text-transform: none;
+                    display: block;
+                    @include transition(inherit);
+                }
+                &:before{
+                    content: attr(data-bf);
+                    position: absolute;
+                    top: -45px;
+                    left: -5px;
+                    
+                }
+                &:after{
+                    content: attr(data-af);
+                    position: absolute;
+                    right: 0;
+                    bottom: -30px;
+                }
+                &:hover{
+                    @include transform( scale(1.05) );
+                    &:before{@include transform( scale(1.2)  translate(-25px, -15px) );}
+                    &:after{@include transform( scale(1.2)  translate(25px, 15px) );}
+                }
+            }
+        }
+        &.pic1{
+            background-image: url('image1');
+            a{
+                @include a(353px, 94px);
+                &:before, &:after{
+                    content: '';
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    border-color: #FF0000;
+                    border-style: solid;
+                    border-width: 0;
+                    @include transition(all .5s cubic-bezier(1,.2,.26,.7));
+                    @include transform(translate(0px, 0px) scale(.8));
+                    opacity: 0;
+                }
+                &:before{
+                    left: 0;
+                    bottom: 0;
+                    border-bottom-width: 1px;
+                    border-left-width: 1px;
+                }
+                &:after{
+                    top: 0;
+                    right: 0;
+                    border-top-width: 1px;
+                    border-right-width: 1px;
+                }
+                &:hover{
+                    &:before, &:after{
+                        @include transition(all 2s cubic-bezier(.14,1.13,0,.91));
+                        opacity: 1;
+                    }
+                    &:before{
+                        @include transform(translate(-30px, 20px) scale(1));
+                        border-bottom-width: 12px;
+                        border-left-width: 12px;
+                    }
+                    &:after{
+                        @include transform(translate(30px, -20px) scale(1));
+                        border-top-width: 12px;
+                        border-right-width: 12px;
+                    }
+                }
+            }
+        }
+    
+    
+    //see if you have to change something with pic2
+    &.pic2{
+        background-image: url('image2');
+        a{
+            @include a(353px, 94px);
+            &:before, &:after{
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-color: #FF0000;
+                border-style: solid;
+                border-width: 0;
+                @include transition(all .5s cubic-bezier(1,.2,.26,.7));
+                @include transform(translate(0px, 0px) scale(.8));
+                opacity: 0;
+            }
+    
+            &:before{
+                left: 0;
+                bottom: 0;
+                border-bottom-width: 1px;
+                border-left-width: 1px;
+            }
+            &:after{
+                top: 0;
+                right: 0;
+                border-top-width: 1px;
+                border-right-width: 1px;
+            }
+            &:hover{
+                &:before, &:after{
+                    @include transition(all 2s cubic-bezier(.14,1.13,0,.91));
+                    opacity: 1;
+                }
+                &:before{
+                    @include transform(translate(-30px, 20px) scale(1));
+                    border-bottom-width: 12px;
+                    border-left-width: 12px;
+                }
+                &:after{
+                    @include transform(translate(30px, -20px) scale(1));
+                    border-top-width: 12px;
+                    border-right-width: 12px;
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    &.pic3{
+            background-image: url('image3');
+            a{
+                @include a(353px, 94px);
+                &:before, &:after{
+                    content: '';
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    border-color: #FF0000;
+                    border-style: solid;
+                    border-width: 0;
+                    @include transition(all .5s cubic-bezier(1,.2,.26,.7));
+                    @include transform(translate(0px, 0px) scale(.8));
+                    opacity: 0;
+                }
+                
+                &:before{
+                    left: 0;
+                    bottom: 0;
+                    border-bottom-width: 1px;
+                    border-left-width: 1px;
+                }
+                &:after{
+                    top: 0;
+                    right: 0;
+                    border-top-width: 1px;
+                    border-right-width: 1px;
+                }
+                &:hover{
+                    &:before, &:after{
+                        @include transition(all 2s cubic-bezier(.14,1.13,0,.91));
+                        opacity: 1;
+                    }
+                    &:before{
+                        @include transform(translate(-30px, 20px) scale(1));
+                        border-bottom-width: 12px;
+                        border-left-width: 12px;
+                    }
+                    &:after{
+                        @include transform(translate(30px, -20px) scale(1));
+                        border-top-width: 12px;
+                        border-right-width: 12px;
+                    }
+                }
+            }
+        }
+    }
     font-family: 'Times New Roman'; 
     margin-top: 20px;
 }
@@ -63,13 +407,9 @@ h2 {
 
 @import "bourbon";
 
-@import url(https://fonts/googleapis.com/css? family=Martel+Sans:200,300,400,800,900);
-
-
-$image1: 'http://www.youthincmag.com/wp-content/uploads/2018/01/technology.jpg';
-$image2: 'https://pctechmag.com/wp-content/uploads/2018/01/Technology-Track.jpg';
-$image3: 'http://www.gettingsmart.com/wp-content/uploads/2017/05/Future-technology.jpg';
-
+$image1: 'keyboard.jpg';
+$image2: 'richtech.jpg';
+$image3: 'new_ideas.jpg';
 *,
 *:before,
 *:after {
@@ -94,7 +434,7 @@ $image3: 'http://www.gettingsmart.com/wp-content/uploads/2017/05/Future-technolo
     @include abstylcenter($width,$height);
 } 
 
-@mixin clip($string) {
+@mixin clip($string) {//www.gettingsmart.com/wp-content/uploads/2017/05/Future-technology.jpg
     -webkit-clip-path: $string;
     clip-path: $string;
 }
@@ -104,7 +444,7 @@ $image3: 'http://www.gettingsmart.com/wp-content/uploads/2017/05/Future-technolo
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0:
+    bottom: 0;
 }
 //keyframes mixin
 @mixin keyframe($name) {
@@ -200,7 +540,7 @@ section{
 		}
 	}
 	&.pic1{
-		background-image: url($image1);
+		background-image: url('image1');
 		a{
 			@include a(353px, 94px);
 			&:before, &:after{
@@ -249,7 +589,7 @@ section{
 
 //see if you have to change something with pic2
 &.pic2{
-    background-image: url($image2);
+    background-image: url('image2');
     a{
         @include a(353px, 94px);
         &:before, &:after{
@@ -257,88 +597,93 @@ section{
             position: absolute;
             width: 40px;
             height: 40px;
-            border-color: #FF0000;      //change the color if nessicary
+            border-color: #FF0000;
             border-style: solid;
             border-width: 0;
             @include transition(all .5s cubic-bezier(1,.2,.26,.7));
             @include transform(translate(0px, 0px) scale(.8));
             opacity: 0;
         }
-    }
-    &:before{
-        left: 0;
-        bottom: 0;
-        border-bottom-width: 1px;
-        border-left-width: 1px;
-    }
-    &:after{
-        top: 0;
-        right: 0;
-        border-top-width: 1px;
-        border-right-width: 1px;
-    }
-    &:hover{
-        &:before, &:after {
-            @include transition(all 2s cubic-bezier(.14,1.13,0,.91));
-            opacity: 1;
-        }
+
         &:before{
-            @include transform(translate(-30px, 20px) scale(1));
-            border-bottom-width: 12px;
-            border-left-width: 12px;
+            left: 0;
+            bottom: 0;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
         }
         &:after{
-            @include transform(translate(30px, -20px) scale(1));
-            border-top-width: 12px;
-            border-right-width: 12px;
+            top: 0;
+            right: 0;
+            border-top-width: 1px;
+            border-right-width: 1px;
+        }
+        &:hover{
+            &:before, &:after{
+                @include transition(all 2s cubic-bezier(.14,1.13,0,.91));
+                opacity: 1;
+            }
+            &:before{
+                @include transform(translate(-30px, 20px) scale(1));
+                border-bottom-width: 12px;
+                border-left-width: 12px;
+            }
+            &:after{
+                @include transform(translate(30px, -20px) scale(1));
+                border-top-width: 12px;
+                border-right-width: 12px;
+            }
         }
     }
 }
 
 
+
+
 &.pic3{
-    background-image: url($image3);
-    a{
-        @include a(353px, 94px);
-        &:before, &:after{
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border-color: #FF0000;      //change the color if nessicary
-            border-style: solid;
-            border-width: 0;
-            @include transition(all .5s cubic-bezier(1,.2,.26,.7));
-            @include transform(translate(0px, 0px) scale(.8));
-            opacity: 0;
-        }
-    }
-    &:before{
-        left: 0;
-        bottom: 0;
-        border-bottom-width: 1px;
-        border-left-width: 1px;
-    }
-    &:after{
-        top: 0;
-        right: 0;
-        border-top-width: 1px;
-        border-right-width: 1px;
-    }
-    &:hover{
-        &:before, &:after {
-            @include transition(all 2s cubic-bezier(.14,1.13,0,.91));
-            opacity: 1;
-        }
-        &:before{
-            @include transform(translate(-30px, 20px) scale(1));
-            border-bottom-width: 12px;
-            border-left-width: 12px;
-        }
-        &:after{
-            @include transform(translate(30px, -20px) scale(1));
-            border-top-width: 12px;
-            border-right-width: 12px;
-        }
+		background-image: url('image3');
+		a{
+			@include a(353px, 94px);
+			&:before, &:after{
+				content: '';
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				border-color: #FF0000;
+				border-style: solid;
+				border-width: 0;
+				@include transition(all .5s cubic-bezier(1,.2,.26,.7));
+				@include transform(translate(0px, 0px) scale(.8));
+				opacity: 0;
+            }
+            
+			&:before{
+				left: 0;
+				bottom: 0;
+				border-bottom-width: 1px;
+				border-left-width: 1px;
+			}
+			&:after{
+				top: 0;
+				right: 0;
+				border-top-width: 1px;
+				border-right-width: 1px;
+			}
+			&:hover{
+				&:before, &:after{
+					@include transition(all 2s cubic-bezier(.14,1.13,0,.91));
+					opacity: 1;
+				}
+				&:before{
+					@include transform(translate(-30px, 20px) scale(1));
+					border-bottom-width: 12px;
+					border-left-width: 12px;
+				}
+				&:after{
+					@include transform(translate(30px, -20px) scale(1));
+					border-top-width: 12px;
+					border-right-width: 12px;
+				}
+			}
+		}
     }
 }
